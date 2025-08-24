@@ -34,7 +34,7 @@ img{max-width:100%; display:block}
 .subtitle{color:var(--muted)}
 
 /* Header */
-/* Header */
+
 header {
   position: sticky;
   top: 0;
@@ -84,6 +84,17 @@ nav a:hover {
   height: 50px;
   border-radius: 50%; /* makes it round if it's a photo */
   object-fit: cover;
+}
+/* watsapp */
+.fab.fa-whatsapp {
+  color: #25D366;   /* WhatsApp official green */
+  font-size: 28px;  /* adjust size */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.fab.fa-whatsapp:hover {
+  color: #20ba5a;   /* slightly darker green on hover */
+  transform: scale(1.1); /* zoom effect */
 }
 
 /* Hero */
@@ -306,5 +317,6 @@ footer .bar{display:flex; justify-content:space-between; align-items:center; gap
   .service-cards{grid-template-columns:1fr}
   .work-grid{grid-template-columns:1fr}
 }
+
 
 
