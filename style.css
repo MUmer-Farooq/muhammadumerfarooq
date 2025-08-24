@@ -111,7 +111,7 @@ nav a:hover {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .35)),
-              url('images/profile.png') center no-repeat;
+              url('profile.png') center no-repeat;
   background-size: 470px auto; /* keep image smaller */
   width: 100%;  /* take full column */
   height: 100%;
@@ -306,3 +306,4 @@ footer .bar{display:flex; justify-content:space-between; align-items:center; gap
   .service-cards{grid-template-columns:1fr}
   .work-grid{grid-template-columns:1fr}
 }
+
