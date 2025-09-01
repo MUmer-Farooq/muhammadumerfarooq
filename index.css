@@ -261,6 +261,32 @@ header .nav { display: flex; justify-content: space-between; align-items: center
 }
 .panel h3 { margin: 0 0 .4rem; font-size: 1.4rem; }
 .panel .lead { font-weight: 700; font-size: 1.1rem; }
+/* Vision Panel Social Icons */
+.panel .social {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.panel .social a {
+  color: #ffffff; /* default white */
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+/* Hover colors based on icon type */
+.panel .social a[aria-label="LinkedIn"]:hover {
+  color: #0077b5; /* LinkedIn blue */
+}
+
+.panel .social a[aria-label="GitHub"]:hover {
+  color: #504e4e; /* GitHub black */
+}
+
+.panel .social a[aria-label="Upwork"]:hover {
+  color: #6fda44; /* Upwork green */
+}
+
 
 @media (max-width: 992px) { .two-col { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .panel { padding: 24px; } }
@@ -296,6 +322,7 @@ header .nav { display: flex; justify-content: space-between; align-items: center
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: #666; }
 .contact-form .btn {
   background: #FFD700; color: #000; border: none; padding: 12px; border-radius: 6px; cursor: pointer; width: 120px; font-weight: bold; transition: 0.3s;
+  cursor: pointer;
 }
 .contact-form .btn:hover { background: #e6c200; }
 
