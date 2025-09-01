@@ -204,12 +204,20 @@
 
     <div class="contact-grid">
       <!-- Contact Form -->
-      <form class="contact-form" action="https://formspree.io/f/xwpneqyr" method="POST" autocomplete="off">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+     <form class="contact-form" 
+      action="https://formspree.io/f/xwpneqyr" 
+      method="POST" 
+      autocomplete="off">
+  
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+  <!-- Redirect back to your homepage or contact section -->
+  <input type="hidden" name="_redirect" value="https://mumer-farooq.github.io/muhammadumerfarooq/#contact">
+  
+  <button type="submit" class="btn">Send Message</button>
+</form>
 
       <!-- Contact Info -->
       <div class="contact-info">
