@@ -88,3 +88,12 @@ function closeFullscreen() {
   document.getElementById("fullscreen-view").style.display = "none";
 }
 
+// Reset form after successful submit
+  document.getElementById("contactForm").addEventListener("submit", function () {
+    setTimeout(() => this.reset(), 200);
+  });
+
+  // Extra: reset form whenever page is shown (fix for mobile bfcache)
+  window.addEventListener("pageshow", function() {
+    document.getElementById("contactForm").reset();
+  });
