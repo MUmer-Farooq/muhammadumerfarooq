@@ -88,12 +88,20 @@ function closeFullscreen() {
   document.getElementById("fullscreen-view").style.display = "none";
 }
 
-// Reset form after successful submit
-  document.getElementById("contactForm").addEventListener("submit", function () {
-    setTimeout(() => this.reset(), 200);
+ const form = document.getElementById("contactForm");
+
+  // Force clear after submit
+  form.addEventListener("submit", function() {
+    setTimeout(() => {
+      document.getElementById("nameField").value = "";
+      document.getElementById("emailField").value = "";
+      document.getElementById("messageField").value = "";
+    }, 300);
   });
 
-  // Extra: reset form whenever page is shown (fix for mobile bfcache)
+  // Force clear on page load (mobile back/refresh)
   window.addEventListener("pageshow", function() {
-    document.getElementById("contactForm").reset();
+    document.getElementById("nameField").value = "";
+    document.getElementById("emailField").value = "";
+    document.getElementById("messageField").value = "";
   });
