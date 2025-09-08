@@ -169,14 +169,13 @@ header .nav {
   .nav-links.active { display: block; margin-top: 15px; }
   .menu-toggle { display: block; }
 }
-/* ---------------- Portfolio ---------------- */
+/* ---------------- Portfolio Base ---------------- */
 .portfolio { 
   padding: 60px 20px;
-  overflow-x: hidden; /* prevent horizontal scroll */
+  background: #f9f9f9;
 }
 
 .portfolio .portfolio-content {
-  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   text-align: left;
@@ -185,66 +184,81 @@ header .nav {
 .portfolio h2 {
   font-size: 2rem;
   margin: 40px 0 20px;
+  color: #333;
+  border-left: 4px solid #ffb400;
+  padding-left: 10px;
 }
 
+/* ---------------- Grid ---------------- */
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* fully responsive */
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
   margin-bottom: 40px;
 }
 
-.portfolio-item img {
+/* ---------------- Card Style ---------------- */
+.portfolio-item {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+/* -------- Grid Previews (clear, not cropped) -------- */
+.portfolio-item img,
+.portfolio-item video {
   width: 100%;
-  height: auto;
+  height: 220px;         /* same preview height */
+  object-fit: contain;   /* show whole picture, no crop */
+  background: #fff;      /* clean background if aspect ratio leaves gaps */
+  display: block;
   border-radius: 8px;
+  padding: 5px;          /* small padding so tall images don’t touch edges */
 }
 
-/* Portfolio images container */
-.portfolio-images {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center; /* left-align images */
+
+
+
+/* ---------------- Info Section ---------------- */
+.portfolio-info {
+  padding: 20px 24px;      /* more breathing room inside the box */
 }
 
-/* All portfolio images */
-.portfolio-images img {
-  width: 100%;            /* fill parent container */
-  max-width: 800px;       /* medium-large size */
-  height: auto;           /* maintain aspect ratio */
-  border-radius: 6px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+.portfolio-info h3 {
+  font-size: 1.35rem;      /* slightly larger heading */
+  margin-bottom: 12px;     /* more space below heading */
+  color: #222;
 }
 
-.portfolio-images img:hover { 
-  transform: scale(1.05); 
+.portfolio-info p {
+  font-size: 1rem;         /* improved readability */
+  color: #555;
+  line-height: 1.6;        /* more vertical spacing between lines */
+  margin-bottom: 12px;     /* space between paragraphs */
 }
 
-/* Responsive - stack on smaller screens */
-@media (max-width: 767px) {
-  .portfolio-images {
-    justify-content: center; /* center on mobile */
-  }
-  .portfolio-images img {
-    max-width: 100%; /* full width on mobile */
-  }
-}
 
-/* Python project images - grid layout aligned left */
+/* ---------------- Python Project Screenshots ---------------- */
 .python-project .portfolio-images {
   display: grid;
-  grid-auto-flow: column;        /* fill row by row */
-  grid-auto-columns: 250px;   /* each image fixed width */
-  gap: 10px;                  /* small gap between images */
-  justify-content: start;     /* align grid to left */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* columns */
+  gap: 15px;
 }
 
 .python-project .portfolio-images img {
   width: 100%;
-  height: auto;
-  border-radius: 6px;
+  max-height: 250px;      /* keep previews neat */
+  object-fit: cover;      /* crop tall screenshots */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 0 10px 10px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -252,48 +266,63 @@ header .nav {
 .python-project .portfolio-images img:hover {
   transform: scale(1.05);
 }
+/* ---------------- Excel Projects Screenshots ---------------- */
+.portfolio-item .portfolio-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive columns */
+  gap: 15px; /* spacing between images */
+}
 
-/* Responsive for mobile */
-@media (max-width: 767px) {
-  .python-project .portfolio-images {
-    grid-template-columns: 1fr; /* single column */
-    grid-auto-columns: auto;    /* reset auto columns */
-  }
-  .python-project .portfolio-images img {
-    max-width: 100%;
-  }
+.portfolio-item .portfolio-images img {
+  width: 100%;
+  max-height: 250px;       /* keeps previews neat */
+  object-fit: cover;       /* crops tall images */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item .portfolio-images img:hover {
+  transform: scale(1.05); /* zoom hover */
 }
 
 
 
-/* Fullscreen overlay */
+/* ---------------- Fullscreen ---------------- */
 .fullscreen {
   display: none;
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.95);
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;   /* align top so tall images scroll */
+  padding: 40px 20px;
   z-index: 1000;
-  overflow: hidden; /* prevent scroll */
+  overflow-y: auto;          /* allow scrolling for tall screenshots */
 }
 
 .fullscreen img {
-  max-width: 95%;
-  max-height: 90%;
+  max-width: 100%;
+  height: auto;
   border-radius: 8px;
-  object-fit: contain;
+  object-fit: contain;       /* show full screenshot */
+  display: block;
+  margin: 0 auto;
 }
 
 .fullscreen .close {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 30px;
   font-size: 40px;
   color: white;
   cursor: pointer;
+  z-index: 1100;
 }
+
 
 /* Footer */
 .footer-clean {
