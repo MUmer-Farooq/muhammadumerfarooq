@@ -1,0 +1,123 @@
+body.pd-page {
+    font-family: Arial, sans-serif;
+  
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+.pd-header {
+    background-color: #3a3b3b;
+    padding: 15px 20px;
+    position: fixed;       /* changed from sticky to fixed */
+    top: 0;                /* stick to top */
+    left: 0;
+    width: 100%;           /* full width */
+    z-index: 1000;         /* stay on top of other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* optional shadow */
+}
+
+.pd-back-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pd-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.pd-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.pd-overview {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Collapsible Styles */
+.pd-collapsible {background: 
+    radial-gradient(circle at 20% 50%, rgba(99, 97, 238, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(247, 37, 133, 0.3) 0%, transparent 50%),
+    linear-gradient(135deg, #34495e, #1a1a1a);
+;
+    color: white;
+    cursor: pointer;
+    padding: 12px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.pd-collapsible:hover {
+    background-color: #2d2f30;
+}
+
+.pd-collapsible i {
+    float: right;
+}
+.pd-content {
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+    margin-bottom: 10px;
+    padding: 0 20px; /* Keep horizontal padding only */
+    padding-top: 0;
+    padding-bottom: 0; /* No vertical padding while collapsed */
+}
+.pd-content img {
+    width: 100%;
+    max-width: 800px; 
+    height: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+}
+
+.pd-content.open {
+    padding-top: 15px;
+    padding-bottom: 15px; /* Add padding only when opened */
+}
+
+
+.pd-content ul {
+    padding: 15px 0;
+}
+
+.pd-content ul li {
+    margin-bottom: 10px;
+}
+
+.pd-project-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+    .pd-other-projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .pd-other-projects {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

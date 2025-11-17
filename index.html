@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Data Analyst Portfolio - Showcasing data analysis projects, skills, and experience">
+    <title>Data Analyst Portfolio | Your Name</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <span>DataAnalyst</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-background"></div>
+
+    <div class="container hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="greeting">Hi, I'm</span>
+                <span class="name">Muhammad Umer Farooq</span>
+            </h1>
+
+            <h2 class="hero-subtitle">Data Analyst & Insights Specialist</h2>
+
+            <p class="hero-description">
+                Transforming complex data into actionable insights through advanced analytics, 
+                visualization, and statistical modeling. Passionate about uncovering patterns 
+                that drive business decisions.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-briefcase"></i> View Projects
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Get in Touch
+                </a>
+            </div>
+
+            <div class="hero-social">
+                <a href="https://www.linkedin.com/in/muhammad-umer-farooq10/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://mumer-farooq.github.io/muhammadumerfarooq/" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="https://www.upwork.com/freelancers/~01b4981ab2bd7abd45?mp_source=share" target="_blank" aria-label="Upwork">
+                    <img src="https://cdn.simpleicons.org/upwork/6fda44" 
+                         alt="Upwork" 
+                         style="width:24px; height:24px;">
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="chart-container" style="height: 350px;">
+                <canvas id="heroChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-indicator">
+        <a href="#about" aria-label="Scroll to about section">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                   <div class="about-image">
+    <img src="assests/image.jpg" alt="Profile Photo">
+</div>
+
+                </div>
+                <div class="about-text">
+                    <h3>Passionate Data Analyst</h3>
+                    <p>
+                        I specialize in extracting meaningful insights from complex datasets using 
+                        statistical analysis, machine learning, and data visualization techniques. 
+                        My approach combines technical expertise with business acumen to deliver 
+                        solutions that drive measurable results.
+                    </p>
+                    <p>
+                        With a strong foundation in Python, SQL, and visualization tools like Power BI, I've helped organizations optimize operations, increase revenue, 
+                        and make data-driven decisions across various industries including finance, 
+                        healthcare, and e-commerce.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number" data-target="5">0</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="3">0</span>
+                            <span class="stat-label">Clients Served</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-target="1">0</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+    <a href="assests/MuhammadUmerFarooq.cv.pdf" download="MuhammadUmerFarooq.cv"  class="btn btn-primary" id="downloadBtn">
+    <i class="fas fa-download"></i> Download Resume
+</a>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <p class="section-subtitle">
+                Comprehensive technical skills backed by hands-on experience in data analysis and visualization
+            </p>
+            
+            <div class="skills-grid">
+                <!-- Programming Languages -->
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Python</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>SQL</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Analysis Tools -->
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Data Analysis</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Pandas & NumPy</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Statistics</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Machine Learning</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualization Tools -->
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Visualization</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Power BI</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Tableau</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Matplotlib & Seaborn</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Databases</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>PostgreSQL</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>MySQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>MongoDB</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools & Technologies -->
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Excel (Advanced)</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Git & GitHub</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Jupyter Notebook</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skill-category">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Soft Skills</h3>
+                    <div class="skill-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Communication</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Problem Solving</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Team Collaboration</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">
+                A showcase of data analysis projects demonstrating real-world problem-solving
+            </p>
+
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="analytics">Analytics</button>
+                <button class="filter-btn" data-filter="visualization">Visualization</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning</button>
+                <button class="filter-btn" data-filter="business">Business Intelligence</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 ecommerce -->
+                <article class="project-card" data-category="visualization business">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="project-details.html#pd-section1" class="project-link" aria-label="View project details">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Tableau</span>
+                        </div>
+                        <h3>E-Commerce Sales Analysis</h3>
+                        <p>
+                            Comprehensive analysis of 2+ million transactions to identify sales patterns, 
+                            customer segments, and revenue optimization opportunities. Increased revenue by 23%.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-chart-line"></i>
+                                <span>23% Revenue Growth</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-database"></i>
+                                <span>2M+ Records</span>
+                            </div>
+                        </div>
+                        <a href="project-details.html#pd-section1" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+
+
+
+
+
+                <!-- Project 2 student result predict
+                <article class="project-card" data-category="ml analytics">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="project-details.html#pd-section6" class="project-link" aria-label="View project details">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">Pandas</span>
+                        </div>
+                        <h3>Students Result Prediction</h3>
+                        <p>
+                            Built a machine learning model to predict Students Result with 89% accuracy. 
+                            Identified key factors driving subjects attrition and recommended retention strategies.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-bullseye"></i>
+                                <span>89% Accuracy</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-users"></i>
+                                <span>1k+ Students</span>
+                            </div>
+                        </div>
+                        <a href="project-details.html#pd-section6" class="btn btn-outline">View Details</a>
+                    </div>
+                </article> -->
+
+
+
+
+
+
+                <!-- Project 3 Covid -->
+               <article class="project-card" data-category="visualization">
+    <div class="project-image">
+        <div class="project-image-placeholder">
+            <i class="fas fa-virus"></i>
+        </div>
+        <div class="project-overlay">
+            <a href="project-details.html#pd-section2" class="project-link" aria-label="View project details">
+                <i class="fas fa-external-link-alt"></i>
+            </a>
+        </div>
+    </div>
+    <div class="project-content">
+        <div class="project-tags">
+            <span class="tag">Power BI</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Visuals</span>
+        </div>
+        <h3>COVID-19 Dashboard</h3>
+        <p>
+            Developed an interactive Power BI dashboard to analyze the global impact of COVID-19.  
+            Tracked confirmed cases, recoveries, and deaths across countries and WHO regions, while identifying monthly trends and patterns.
+        </p>
+        <div class="project-metrics">
+            <div class="metric">
+                <i class="fas fa-globe"></i>
+                <span>Global Insights</span>
+            </div>
+            <div class="metric">
+                <i class="fas fa-chart-line"></i>
+                <span>829M+ Cases Analyzed</span>
+            </div>
+            <div class="metric">
+                <i class="fas fa-heartbeat"></i>
+                <span>388M+ Recoveries Tracked</span>
+            </div>
+            <div class="metric">
+                <i class="fas fa-skull-crossbones"></i>
+                <span>43M+ Deaths Monitored</span>
+            </div>
+        </div>
+        <a href="project-details.html#pd-section2" class="btn btn-outline">View Details</a>
+    </div>
+              </article>
+
+
+                <!-- Project 4 healthcare -->
+                <article class="project-card" data-category="analytics">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="project-details.html#pd-section3" class="project-link" aria-label="View project details">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">R</span>
+                            <span class="tag">Statistics</span>
+                        </div>
+                        <h3>Healthcare Data Analysis</h3>
+                        <p>
+                            Analyzed patient data to identify trends in treatment outcomes, optimize 
+                            resource allocation, and improve patient care quality across multiple facilities.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-hospital"></i>
+                                <span>5 Facilities</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-percent"></i>
+                                <span>15% Cost Reduction</span>
+                            </div>
+                        </div>
+                        <a href="project-details.html#pd-section3" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+                <!-- Project 5 Linkedin analysis -->
+                <article class="project-card" data-category="analytics">
+                    <div class="project-image">
+                        <div class="project-image-placeholder">
+                            <i class="fas fa-chart-area"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <a href="project-details.html#pd-section4" class="project-link" aria-label="View project details">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <h3>Linkedin Ai Job Market Analysis</h3>
+                        <p>
+                            Developed interactive visualizations for Linkedin Ai Job market,including .
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <i class="fas fa-dollar-sign"></i>
+                                <span>Multi-asset</span>
+                            </div>
+                            <div class="metric">
+                                <i class="fas fa-calendar"></i>
+                                <span>1 Years Data</span>
+                            </div>
+                        </div>
+                        <a href="project-details.html#pd-section4" class="btn btn-outline">View Details</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+<!-- Experience Section -->
+<section id="experience" class="experience">
+    <div class="container">
+        <h2 class="section-title">Experience & Education</h2>
+        
+        <div class="experience-content">
+            <!-- Work Experience -->
+            <div class="experience-column">
+                <h3 class="column-title">
+                    <i class="fas fa-briefcase"></i> Experience
+                </h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025</span>
+                            <h4>Data Analysis Intern</h4>
+                            <p class="company">DigiSkills.pk</p>
+                            <ul>
+                                <li>Analyzed large datasets for training program improvements</li>
+                                <li>Developed Excel + Power BI dashboards</li>
+                                <li>Prepared structured reports for decision-making</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Aug – Oct 2025</span>
+                            <h4>Data Analyst Intern</h4>
+                            <p class="company">National Youth Leadership Program</p>
+                            <ul>
+                                <li>Analyzed participant data for trends and improvements</li>
+                                <li>Built reports in Power BI & Excel for stakeholders</li>
+                                <li>Worked with teams for timely, accurate reporting</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="experience-column">
+                <h3 class="column-title">
+                    <i class="fas fa-graduation-cap"></i> Education
+                </h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023 – 2027</span>
+                            <h4>Bachelor of Science in Computer Science</h4>
+                            <p class="company">Sindh Madressatul Islam University</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2020 – 2022</span>
+                            <h4>Intermediate in Computer Science</h4>
+                            <p class="company">The Caspian College</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Completed 2020</span>
+                            <h4>Matriculation (Science)</h4>
+                            <p class="company">H.E.F School</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="experience-column">
+                <h3 class="column-title">
+                    <i class="fas fa-certificate"></i> Certifications
+                </h3>
+                
+           
+<ul>
+  <li><strong>Deloitte Australia – Data Analytics Job Simulation (Forage)</strong> — <br>July 2025</li>
+  <li><strong>Data Visualization with Power BI – Great Learning Academy</strong> — <br> Sep–Nov 2024</li>
+  <li><strong>Microsoft Office – The Skills E-Learning Platform</strong> — <br> May 2024</li>
+</ul>
+
+
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">
+                Let's discuss how data analytics can help drive your business forward
+            </p>
+
+            <div class="contact-content">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>
+                        I'm always open to discussing new projects, creative ideas, 
+                        or opportunities to be part of your vision.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <a href="mailto:alex.johnson@example.com">jameelumer71@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <a href="tel:+1234567890">+92 317-2555189</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Karachi, Pakistan</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Availability</h4>
+                                <p>Open to freelance & full-time opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/muhammad-umer-farooq10/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://mumer-farooq.github.io/muhammadumerfarooq/" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="https://www.upwork.com/freelancers/~01b4981ab2bd7abd45?mp_source=share" target="_blank" aria-label="Upwork">
+                    <img src="https://cdn.simpleicons.org/upwork/6fda44" 
+                         alt="Upwork" 
+                         style="width:24px; height:24px;">
+                </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+            <form class="contact-form" action="https://formspree.io/f/xwpneqyr" method="POST" autocomplete="off">
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required placeholder="Umer">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required placeholder="umer@example.com">
+    </div>
+
+    <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
+    </div>
+
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project..."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i> Send Message
+    </button>
+
+    <div class="form-message" id="formMessage"></div>
+</form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-chart-line"></i>
+                    <span>DataAnalyst Portfolio</span>
+                </div>
+                <p class="footer-text">
+                    Transforming data into actionable insights
+                </p>
+               
+            <div class="footer-bottom">
+                <p>&copy; @2025 MuhammadUmerFarooq. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
