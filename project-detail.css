@@ -47,7 +47,7 @@ body.pd-page {
     radial-gradient(circle at 20% 50%, rgba(99, 97, 238, 0.3) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(247, 37, 133, 0.3) 0%, transparent 50%),
     linear-gradient(135deg, #34495e, #1a1a1a);
-;
+
     color: white;
     cursor: pointer;
     padding: 12px 20px;
