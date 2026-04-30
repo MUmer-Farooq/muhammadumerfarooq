@@ -1,0 +1,277 @@
+/* ======================================
+   Project Details Page - CSS Styles
+   ====================================== */
+
+/* ============ CSS Variables ============ */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #2980b9;
+    --accent-color: #e74c3c;
+    --light-bg: #ffffff;
+    --gray-bg: #f5f6fa;
+    --text-dark: #2c3e50;
+    --text-light: #ffffff;
+    --text-gray: #7f8c8d;
+    --border-color: #ddd;
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 15px rgba(0,0,0,0.15);
+    --radius-sm: 5px;
+    --radius-md: 10px;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+}
+
+/* ============ Reset & Base ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.pd-page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--gray-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ============ Header ============ */
+.pd-header {
+    background: linear-gradient(135deg, #34495e, #1a1a1a);
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+.pd-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pd-back-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-normal);
+}
+
+.pd-back-link:hover {
+    color: var(--secondary-color);
+}
+
+/* ============ Main Container ============ */
+.pd-main {
+    padding-top: 80px;
+    padding-bottom: var(--spacing-lg);
+}
+
+/* ============ Section Styles ============ */
+section[id^="pd-section"] {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* ============ Project Container ============ */
+.pd-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--light-bg);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============ Title & Overview ============ */
+.pd-title {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.pd-overview {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-dark);
+}
+
+.pd-overview b {
+    color: var(--secondary-color);
+}
+
+/* ============ Collapsible Buttons ============ */
+.pd-collapsible {
+    background: linear-gradient(135deg, #34495e, #1a1a1a);
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 15px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    margin-top: var(--spacing-sm);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pd-collapsible:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.pd-collapsible i {
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.pd-collapsible.active i {
+    transform: rotate(180deg);
+}
+
+/* ============ Collapsible Content ============ */
+.pd-content {
+    background-color: #f8f9fa;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+    margin-bottom: var(--spacing-sm);
+}
+
+.pd-content.open {
+    padding: 20px;
+    max-height: none;
+}
+
+/* ============ Content Lists ============ */
+.pd-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.pd-content ul li {
+    margin-bottom: 12px;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-dark);
+}
+
+.pd-content ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.pd-content ul li b {
+    color: var(--secondary-color);
+}
+
+/* ============ Media (Images & Videos) ============ */
+.pd-content img {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease;
+}
+
+.pd-content img:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.pd-content video {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    display: block;
+}
+
+/* ============ Project Items ============ */
+.pd-project-item {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ============ Responsive Design ============ */
+@media (max-width: 768px) {
+    .pd-container {
+        margin: 0 15px;
+        padding: 20px;
+    }
+    
+    .pd-title {
+        font-size: 1.5rem;
+    }
+    
+    .pd-collapsible {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pd-container {
+        padding: 15px;
+    }
+    
+    .pd-title {
+        font-size: 1.3rem;
+    }
+    
+    .pd-overview {
+        font-size: 0.95rem;
+    }
+}
+
+/* ============ Animations ============ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pd-container {
+    animation: fadeIn 0.5s ease;
+}
+
+/* ============ Utility Classes ============ */
+.pd-text-center {
+    text-align: center;
+}
+
+.pd-mb-0 {
+    margin-bottom: 0;
+}
+
+.pd-mb-1 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.pd-mb-2 {
+    margin-bottom: var(--spacing-md);
+}

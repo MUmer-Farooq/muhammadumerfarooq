@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst | Umer - Intro</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Intro CSS -->
+    <link rel="stylesheet" href="intro.css">
+</head>
+<body style="overflow: hidden; background-color: #050b14; margin: 0; padding: 0;">
+
+    <div id="portfolio-intro">
+        <div class="bg-grid" id="intro-bg-grid"></div>
+
+        <div class="sql-terminal" id="intro-terminal">
+            <div class="terminal-header">
+                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                <div class="terminal-title">load_dashboard.sql</div>
+            </div>
+            <div class="terminal-body">
+                <div id="intro-code-output"></div>
+                <div class="cursor" id="intro-cursor"></div>
+                <div class="executing" id="intro-executing">> Fetching Data Models... <span id="intro-spinner">/</span></div>
+                <div class="success" id="intro-success">> Connection established.<br>> Compiling Power BI View...</div>
+            </div>
+        </div>
+
+        <div class="app-dashboard" id="intro-chartWrapper">
+            <div class="app-sidebar">
+                <div class="sidebar-logo">
+                    <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                    <span>BI_Studio</span>
+                </div>
+                <div class="sidebar-menu">
+                    <div class="menu-item active">📊 Overview</div>
+                    <div class="menu-item">📈 Analytics</div>
+                    <div class="menu-item">🗄️ Datasets</div>
+                    <div class="menu-item">🤖 ML Models</div>
+                    <div class="menu-item" style="margin-top: auto;">⚙️ Settings</div>
+                </div>
+            </div>
+            <div class="app-main">
+                <div class="app-header">
+                    <h2>Umer's Analytics Dashboard</h2>
+                    <div class="header-user">UF</div>
+                </div>
+                <div class="kpi-grid">
+                    <div class="kpi-card"><div class="kpi-title">Data Points Analyzed</div><div class="kpi-value">829M+ <span class="kpi-trend">↑ 12%</span></div></div>
+                    <div class="kpi-card"><div class="kpi-title">Predictive Accuracy</div><div class="kpi-value">89.4% <span class="kpi-trend">↑ 4%</span></div></div>
+                    <div class="kpi-card"><div class="kpi-title">Cost Reduction</div><div class="kpi-value">15% <span class="kpi-trend">↑ 2%</span></div></div>
+                    <div class="kpi-card"><div class="kpi-title">Revenue Growth</div><div class="kpi-value">23% <span class="kpi-trend">↑ 5%</span></div></div>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="chart-box"><div class="chart-title">Global Impact & Insights Trend</div><div class="chart-canvas-container"><canvas id="intro-mainChart"></canvas></div></div>
+                    <div class="chart-box"><div class="chart-title">Core Tool Distribution</div><div class="chart-canvas-container" style="position: relative; display: flex; justify-content: center;"><div style="position: absolute; top: 40%; transform: translateY(-50%); font-size: 2.5rem; color: rgba(0, 242, 254, 0.7); pointer-events: none;"><i class="fas fa-database"></i></div><canvas id="intro-doughnutChart"></canvas></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="final-reveal" id="intro-finalReveal">
+            <h1 id="intro-nameText" data-value="Umer Farooq">Umer Farooq</h1>
+            <h2 id="intro-titleText" data-value="Data Analyst">Data Analyst</h2>
+        </div>
+    </div>
+
+    <!-- Intro JS -->
+    <script src="intro.js"></script>
+</body>
+</html>
