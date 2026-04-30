@@ -122,18 +122,32 @@
 
         const introLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
 
-        function introDecodeText(element) {
+function introDecodeText(element) {
             let iteration = 0;
             const finalValue = element.dataset.value;
-            clearInterval(element.dataset.interval);
-            element.dataset.interval = setInterval(() => {
+            
+            // Always clear any existing interval first using the stored reference
+            const existingInterval = element.dataset.interval;
+            if (existingInterval) {
+                clearInterval(existingInterval);
+            }
+            
+            // Create new interval and store its reference
+            const newInterval = setInterval(() => {
                 element.innerText = finalValue.split("").map((letter, index) => {
                     if(index < iteration) { return finalValue[index]; }
                     return introLetters[Math.floor(Math.random() * introLetters.length)];
                 }).join("");
-                if(iteration >= finalValue.length) clearInterval(element.dataset.interval);
+                
+                if(iteration >= finalValue.length) {
+                    clearInterval(newInterval);
+                    element.dataset.interval = null; // Clear reference after stopping
+                }
                 iteration += 1 / 3;
             }, 30);
+            
+            // Store the new interval reference
+            element.dataset.interval = newInterval;
         }
 
         function introShowFinalReveal() {
@@ -155,17 +169,27 @@
             }, 2200); // 1200ms for decoding + 1000ms delay
         }
 
-        document.getElementById('intro-nameText').onmouseover = event => introDecodeText(event.target);
+document.getElementById('intro-nameText').onmouseover = event => introDecodeText(event.target);
         document.getElementById('intro-titleText').onmouseover = event => introDecodeText(event.target);
 
         function enterMainSite() {
             const intro = document.getElementById('portfolio-intro');
             intro.style.opacity = '0'; // Fade out before redirect
+            sessionStorage.setItem('introShown', 'true'); // Mark intro as shown
             setTimeout(() => {
                 window.location.href = 'index.html'; // Redirect to main portfolio
             }, 300);
         }
 
-        window.addEventListener('load', () => { 
-            setTimeout(introTypeLine, 500); 
-        });
+// Check if intro was already shown to prevent re-running
+        function startIntro() {
+            if (sessionStorage.getItem('introShown') === 'true') {
+                // Intro already shown, redirect to main site
+                window.location.href = 'index.html';
+                return;
+            }
+            // Show the intro animation
+            setTimeout(introTypeLine, 500);
+        }
+
+        window.addEventListener('load', startIntro);
